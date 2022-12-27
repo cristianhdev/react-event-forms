@@ -31,8 +31,6 @@ export const Online = () => {
 
   return (
     <>
-      <div className="conectado">{contador}</div>
-      <HijoElementCount incremenet={incrementar} />
       <SimpleForm />
     </>
   );

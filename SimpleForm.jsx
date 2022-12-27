@@ -5,20 +5,28 @@ import { useForm } from './useForm';
 import { FormTodoList } from './FormTodoList';
 
 const initialTodoState = [
-  {
+  /* {
     id: new Date().getTime(),
-    title: 'Tarea 2',
+    titulo: 'Tarea 2',
     done: false,
   },
   {
     id: new Date().getTime(),
-    title: 'Tarea 1',
+    titulo: 'Tarea 1',
     done: false,
-  },
+  }, */
 ];
 
+const init = () => {
+  return JSON.parse(localStorage.getItem('todos') || []);
+};
+
 export const SimpleForm = () => {
-  const [state, dispatch] = useReducer(todoReducer, initialTodoState);
+  const [todos, dispatch] = useReducer(todoReducer, initialTodoState, init);
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
   const { formState, onInputChange, nombre, apellido, edad } = useForm({
     nombre: '',
     apellido: '',
@@ -27,6 +35,12 @@ export const SimpleForm = () => {
 
   const onNewTodoItem = (data) => {
     console.log(data);
+    const action = {
+      type: 'ADD',
+      payload: data,
+    };
+
+    dispatch(action);
   };
 
   return (
@@ -59,7 +73,7 @@ export const SimpleForm = () => {
         value={edad}
         onChange={onInputChange}
       /> */}
-      <TodoList listTodo={state} />
+      <TodoList listTodo={todos} />
     </>
   );
 };

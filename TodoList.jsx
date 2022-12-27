@@ -6,7 +6,7 @@ export const TodoList = ({ listTodo }) => {
     <>
       <ul className="list-group">
         {listTodo.map((item) => {
-          return <ItemList title={item.title} id={item.id} />;
+          return <ItemList titulo={item.titulo} id={item.id} />;
         })}
       </ul>
     </>

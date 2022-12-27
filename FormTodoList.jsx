@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from './useForm';
 
 export const FormTodoList = ({ newTodo }) => {
-  const { formState, onInputChange, titulo } = useForm({
+  const { formState, titulo, onInputChange, onResetForm } = useForm({
     id: new Date().getTime(),
     titulo: '',
     done: false,
@@ -11,6 +11,7 @@ export const FormTodoList = ({ newTodo }) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     newTodo(formState);
+    onResetForm();
   };
 
   return (
@@ -25,7 +26,7 @@ export const FormTodoList = ({ newTodo }) => {
           value={titulo}
           onChange={onInputChange}
         />
-        <input type="submit" value="GUARDAR" />
+        <input type="submit" className="btn btn-success" value="GUARDAR" />
       </form>
     </>
   );

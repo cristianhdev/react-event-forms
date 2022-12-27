@@ -1,7 +1,7 @@
 export const todoReducer = (initialState, action) => {
   switch (action.type) {
-    case 'ABC':
-      throw new Error('Metodo ABC no implemetado');
+    case 'ADD':
+      return [...initialState, action.payload];
     default:
       return initialState;
   }
