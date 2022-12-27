@@ -1,0 +1,13 @@
+.conectado {
+  background-color: green;
+}
+
+.desconectado {
+  background-color: red;
+}
+
+.conectado,
+.desconectado {
+  color: white;
+  padding: 12px;
+}
