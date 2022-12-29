@@ -23,12 +23,11 @@ export const SimpleForm = () => {
   return (
     <>
       <div className="container">
-        <h5>
-          Total:{todosCount} | Pendientes:{todosPending}
-        </h5>
+        <h3> TODO LIST:</h3>
         <hr></hr>
         <div>
           <div>
+            <h4>Tareas:</h4>
             <div>
               <FormTodoList newTodo={onNewTodoItem} />
             </div>
@@ -38,6 +37,11 @@ export const SimpleForm = () => {
                 onRemoveItem={onRemove}
                 onToggleItem={onToggleListItem}
               />
+            </div>
+            <div>
+              <h5>
+                Total:{todosCount} | Pendientes:{todosPending}
+              </h5>
             </div>
           </div>
         </div>

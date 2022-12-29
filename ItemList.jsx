@@ -13,7 +13,7 @@ export const ItemList = ({ todo, onRemoveItemList, onToggleTodo }) => {
               {todo.titulo}
             </span>
           </div>
-          <div className="col-4">
+          <div className="col-4 text-center">
             <button
               onClick={() => onRemoveItemList(todo.id)}
               className="btn btn-danger mt-2"
