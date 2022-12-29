@@ -21,12 +21,12 @@ export const FormTodoList = ({ newTodo }) => {
           type="text"
           name="titulo"
           placeholder="santillan"
-          className="form-control"
+          className="form-control mb-3"
           id="apellido"
           value={titulo}
           onChange={onInputChange}
         />
-        <input type="submit" className="btn btn-success" value="GUARDAR" />
+        <input type="submit" className="btn btn-success mb-3" value="GUARDAR" />
       </form>
     </>
   );
